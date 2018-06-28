@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+extension URL {
+    static func safeURL(string: String) -> URL {
+        guard let validURL = self.init(string: string) else {
+            fatalError()
+        }
+        return validURL
+    }
+}
