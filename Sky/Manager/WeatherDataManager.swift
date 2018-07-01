@@ -12,13 +12,15 @@ final class WeatherDataManager {
     
     typealias CompletionHandler = (WeatherData?, DataManagerError?) -> Void
     
+    private var urlSession: URLSession
     private let baseURL: URL
     
-    private init(baseURL: URL) {
+    private init(baseURL: URL, urlSession: URLSession) {
         self.baseURL = baseURL
+        self.urlSession = urlSession
     }
     
-    static let shared = WeatherDataManager(baseURL: API.authenticatedUrl)
+    static let shared = WeatherDataManager(baseURL: API.authenticatedUrl, urlSession: URLSession.shared)
     
     func weatherData(at: Location, complete: @escaping CompletionHandler) {
         let url = baseURL.appendingPathComponent("\(at.latitude), \(at.longtitude)")
@@ -26,7 +28,7 @@ final class WeatherDataManager {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "GET"
         
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
+        self.urlSession.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
                 self.finshRequest(data: data, response: response, error: error, complete: complete)
             }
