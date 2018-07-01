@@ -16,7 +16,6 @@
 		6890B8171F7CC25500ACB755 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6890B8151F7CC25500ACB755 /* Main.storyboard */; };
 		6890B8191F7CC25500ACB755 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6890B8181F7CC25500ACB755 /* Assets.xcassets */; };
 		6890B81C1F7CC25500ACB755 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6890B81A1F7CC25500ACB755 /* LaunchScreen.storyboard */; };
-		6890B8271F7CC25500ACB755 /* SkyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6890B8261F7CC25500ACB755 /* SkyTests.swift */; };
 		6890B8321F7CC25500ACB755 /* SkyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6890B8311F7CC25500ACB755 /* SkyUITests.swift */; };
 		6890B8461F7CC4D700ACB755 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6890B8451F7CC4D700ACB755 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
@@ -51,7 +50,6 @@
 		6890B81B1F7CC25500ACB755 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6890B81D1F7CC25500ACB755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6890B8221F7CC25500ACB755 /* SkyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6890B8261F7CC25500ACB755 /* SkyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyTests.swift; sourceTree = "<group>"; };
 		6890B8281F7CC25500ACB755 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6890B82D1F7CC25500ACB755 /* SkyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6890B8311F7CC25500ACB755 /* SkyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyUITests.swift; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 		6890B8251F7CC25500ACB755 /* SkyTests */ = {
 			isa = PBXGroup;
 			children = (
-				6890B8261F7CC25500ACB755 /* SkyTests.swift */,
 				6890B8281F7CC25500ACB755 /* Info.plist */,
 			);
 			path = SkyTests;
@@ -360,7 +357,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6890B8271F7CC25500ACB755 /* SkyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
