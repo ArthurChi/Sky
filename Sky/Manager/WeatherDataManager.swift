@@ -15,7 +15,7 @@ final class WeatherDataManager {
     private var urlSession: URLSessionProtocol
     private let baseURL: URL
     
-    private init(baseURL: URL, urlSession: URLSessionProtocol) {
+    internal init(baseURL: URL, urlSession: URLSessionProtocol) {
         self.baseURL = baseURL
         self.urlSession = urlSession
     }

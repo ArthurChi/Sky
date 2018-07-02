@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+@testable import Sky
+
+class MockURLSession: URLSessionProtocol {
+    
+    var sessionDataTask = MockURLSessionDataTask()
+    
+    func dataTask(with request: URLRequest, completionHandler: (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTaskProtocol {
+        return sessionDataTask
+    }
+}

@@ -2,11 +2,13 @@
 //  WeatherDataManagerTest.swift
 //  SkyTests
 //
-//  Created by Vassily on 2018/7/1.
+//  Created by 叶果 on 2018/7/3.
 //  Copyright © 2018年 Mars. All rights reserved.
 //
 
 import XCTest
+
+@testable import Sky
 
 class WeatherDataManagerTest: XCTestCase {
     
@@ -20,6 +22,17 @@ class WeatherDataManagerTest: XCTestCase {
         super.tearDown()
     }
     
-    
+    func test_urlession_datatask_resume_is_called() {
+        
+        let session = MockURLSession()
+        let task = session.sessionDataTask
+        
+        let weatherDataManager = WeatherDataManager.init(baseURL: API.authenticatedUrl, urlSession: session)
+        
+        let location = Location(name: "", latitude: 0, longtitude: 0)
+        weatherDataManager.weatherData(at: location) { (_, _) in }
+        
+        XCTAssert(task.isResumeCalled)
+    }
     
 }
