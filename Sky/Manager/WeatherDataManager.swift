@@ -12,10 +12,10 @@ final class WeatherDataManager {
     
     typealias CompletionHandler = (WeatherData?, DataManagerError?) -> Void
     
-    private var urlSession: URLSession
+    private var urlSession: URLSessionProtocol
     private let baseURL: URL
     
-    private init(baseURL: URL, urlSession: URLSession) {
+    private init(baseURL: URL, urlSession: URLSessionProtocol) {
         self.baseURL = baseURL
         self.urlSession = urlSession
     }
