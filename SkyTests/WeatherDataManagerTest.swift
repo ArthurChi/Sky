@@ -29,10 +29,39 @@ class WeatherDataManagerTest: XCTestCase {
         
         let weatherDataManager = WeatherDataManager.init(baseURL: API.authenticatedUrl, urlSession: session)
         
-        let location = Location(name: "", latitude: 0, longtitude: 0)
-        weatherDataManager.weatherData(at: location) { (_, _) in }
+        weatherDataManager.weatherData(at: 0, longtitude: 0) { (_, _) in }
         
         XCTAssert(task.isResumeCalled)
     }
     
+    func test_weatherData_get_failedRequest() {
+        let session = MockURLSession()
+        session.error = NSError(domain: "Invalid Request", code: 100, userInfo: nil)
+        
+        let manager = WeatherDataManager(baseURL: URL(string: "https://darksky.net")!, urlSession: session)
+        
+        var error: DataManagerError?
+        manager.weatherData(at: 0, longtitude: 0) { (_, e) in
+            error = e
+        }
+        
+        XCTAssertEqual(error, DataManagerError.failedRequest)
+    }
+    
+    func test_weatherDataAt_handle_statuscode_not_equal_to_200() {
+        let url = URL(string: "https://darksky.net")!
+        let session = MockURLSession()
+        session.response = HTTPURLResponse(url: url, statusCode: 400, httpVersion: nil, headerFields: nil)
+        
+        session.data = "{}".data(using: .utf8)
+        
+        let manager = WeatherDataManager(baseURL: url, urlSession: session)
+        
+        var error: DataManagerError?
+        manager.weatherData(at: 0, longtitude: 0) { (_, e) in
+            error = e
+        }
+        
+        XCTAssertEqual(error, DataManagerError.invalidResponse)
+    }
 }
