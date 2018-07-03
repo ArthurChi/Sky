@@ -83,6 +83,9 @@
                                             <constraint firstAttribute="width" constant="44" id="YKA-kA-7Zz"/>
                                         </constraints>
                                         <state key="normal" image="LocationBtn"/>
+                                        <connections>
+                                            <action selector="locationButtonPressed:" destination="d1G-Ew-ubD" eventType="touchUpInside" id="GTQ-Lg-Ncu"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HE3-le-adc">
                                         <rect key="frame" x="323" y="8" width="44" height="44"/>
@@ -91,6 +94,9 @@
                                             <constraint firstAttribute="width" constant="44" id="gCL-hR-Y7g"/>
                                         </constraints>
                                         <state key="normal" image="Setting"/>
+                                        <connections>
+                                            <action selector="settingsButtonPressed:" destination="d1G-Ew-ubD" eventType="touchUpInside" id="zhi-ef-kBO"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beijing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyC-t7-lbZ">
                                         <rect key="frame" x="60" y="14" width="255" height="32"/>
