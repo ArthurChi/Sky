@@ -13,5 +13,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupActiveNotification()
+    }
+    
+    private func setupActiveNotification() {
+        
     }
 }
