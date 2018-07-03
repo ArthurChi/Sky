@@ -9,8 +9,6 @@
 import Foundation
 
 protocol CurrentWeatherViewControllerDelegate: class {
-    func locationButtonPressed(
-        controller: CurrentWeatherViewController)
-    func settingsButtonPressed(
-        controlled: CurrentWeatherViewController)
+    func locationButtonPressed(controller: CurrentWeatherViewController)
+    func settingsButtonPressed(controller: CurrentWeatherViewController)
 }

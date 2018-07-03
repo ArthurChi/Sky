@@ -26,18 +26,16 @@ class CurrentWeatherViewController: WeatherViewController {
     }
     
     var location: Location? {
-        didSet {
-            DispatchQueue.main.async { self.updateView() }
-        }
+        didSet { DispatchQueue.main.async { self.updateView() } }
     }
     
-//    @IBAction func locationButtonPressed(_ sender: UIButton) {
-//        delegate?.locationButtonPressed(controller: self)
-//    }
-//    
-//    @IBAction func settingsButtonPressed(_ sender: UIButton) {
-//        delegate?.settingsButtonPressed(controller: self)
-//    }
+    @IBAction func locationButtonPressed(_ sender: UIButton) {
+        delegate?.locationButtonPressed(controller: self)
+    }
+    
+    @IBAction func settingsButtonPressed(_ sender: UIButton) {
+        delegate?.settingsButtonPressed(controller: self)
+    }
     
     private func updateView() {
         activityIndicatorView.stopAnimating()
