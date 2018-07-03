@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A533B2120E4A20B0048048F /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A533B2020E4A20B0048048F /* Configuration.swift */; };
-		2A65F57D20EBAD840014D078 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A65F57C20EBAD840014D078 /* ViewController.swift */; };
+		2A65F57D20EBAD840014D078 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A65F57C20EBAD840014D078 /* RootViewController.swift */; };
 		2A65F57F20EBAD9B0014D078 /* CurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A65F57E20EBAD9B0014D078 /* CurrentWeatherViewController.swift */; };
 		2A65F58120EBB5790014D078 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A65F58020EBB5790014D078 /* Double.swift */; };
 		2A65F58320EBB5FA0014D078 /* CurrentWeatherViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A65F58220EBB5FA0014D078 /* CurrentWeatherViewControllerDelegate.swift */; };
@@ -50,7 +50,7 @@
 
 /* Begin PBXFileReference section */
 		2A533B2020E4A20B0048048F /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
-		2A65F57C20EBAD840014D078 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2A65F57C20EBAD840014D078 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		2A65F57E20EBAD9B0014D078 /* CurrentWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewController.swift; sourceTree = "<group>"; };
 		2A65F58020EBB5790014D078 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		2A65F58220EBB5FA0014D078 /* CurrentWeatherViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -234,7 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				6890B8131F7CC25500ACB755 /* WeatherViewController.swift */,
-				2A65F57C20EBAD840014D078 /* ViewController.swift */,
+				2A65F57C20EBAD840014D078 /* RootViewController.swift */,
 				2A65F57E20EBAD9B0014D078 /* CurrentWeatherViewController.swift */,
 			);
 			path = ViewControllers;
@@ -392,7 +392,7 @@
 				6AC68C6B20EAC6E900D9316F /* URLSessionDataTaskProtocol.swift in Sources */,
 				6AC68C7220EAC7C800D9316F /* URLSessionDataTask.swift in Sources */,
 				2A65F58120EBB5790014D078 /* Double.swift in Sources */,
-				2A65F57D20EBAD840014D078 /* ViewController.swift in Sources */,
+				2A65F57D20EBAD840014D078 /* RootViewController.swift in Sources */,
 				2A533B2120E4A20B0048048F /* Configuration.swift in Sources */,
 				2A7C18A420E8C1D5002B5471 /* WeatherData.swift in Sources */,
 				6AC68C7020EAC77C00D9316F /* URLSession.swift in Sources */,
