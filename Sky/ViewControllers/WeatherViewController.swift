@@ -23,7 +23,11 @@ class WeatherViewController: UIViewController {
     
     private func setupView() {
         
+        activityIndicatorView.startAnimating()
+        activityIndicatorView.hidesWhenStopped = true
         
+        weatherContainerView.isHidden = true
+        loadingFailedLabel.isHidden = true
     }
 }
 

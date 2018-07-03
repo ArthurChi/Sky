@@ -49,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="-356" y="129"/>
         </scene>
-        <!--Weather View Controller-->
+        <!--Current Weather View Controller-->
         <scene sceneID="EP2-TW-FC0">
             <objects>
-                <viewController id="d1G-Ew-ubD" customClass="WeatherViewController" customModule="Sky" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="d1G-Ew-ubD" customClass="CurrentWeatherViewController" customModule="Sky" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Me-mj-Rea">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="254"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,9 +161,9 @@
                         <viewLayoutGuide key="safeArea" id="Gct-2c-X4X"/>
                     </view>
                     <connections>
-                        <outlet property="activityIndicatorView" destination="geF-4U-QjT" id="mrR-zS-ce6"/>
-                        <outlet property="loadingFailedLabel" destination="r6T-Aj-oPj" id="UlN-G1-S8V"/>
-                        <outlet property="weatherContainerView" destination="JYV-e0-tBU" id="2pk-fw-sKF"/>
+                        <outlet property="activityIndicatorView" destination="geF-4U-QjT" id="gmt-UO-bap"/>
+                        <outlet property="loadingFailedLabel" destination="r6T-Aj-oPj" id="Ikr-4e-59W"/>
+                        <outlet property="weatherContainerView" destination="JYV-e0-tBU" id="iK8-Qv-Z84"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C4y-hb-px3" userLabel="First Responder" sceneMemberID="firstResponder"/>
