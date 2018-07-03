@@ -64,4 +64,38 @@ class WeatherDataManagerTest: XCTestCase {
         
         XCTAssertEqual(error, DataManagerError.invalidResponse)
     }
+    
+    func test_weatherDataAt_handler_response_decode() {
+        let url = URL(string: "https://darksky.net")!
+        let session = MockURLSession()
+        session.response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
+        
+        let data =
+            """
+            {
+                "longitude" : 100,
+                "latitude" : 52,
+                "currently" : {
+                    "temperature" : 23,
+                    "humidity" : 0.91,
+                    "icon" : "snow",
+                    "time" : 1507180335,
+                    "summary" : "Light Snow"
+                }
+            }
+            """
+            .data(using: .utf8)!
+        session.data = data
+        
+        var weatherData: WeatherData? = nil
+        
+        let manager = WeatherDataManager(baseURL: url, urlSession: session)
+        manager.weatherData(at: 52, longtitude: 100) { (decodeData, _) in
+            weatherData = decodeData
+        }
+        
+        let expected = WeatherData(latitude: 52, longitude: 100, currently: WeatherData.CurrentWeatherData(time: Date(timeIntervalSince1970: 1507180335), summary: "Light Snow", icon: "snow", temperature: 23, humidity: 0.91))
+        
+        XCTAssertEqual(expected, weatherData)
+    }
 }

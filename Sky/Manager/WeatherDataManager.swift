@@ -39,9 +39,12 @@ final class WeatherDataManager {
         } else if let data = data, let response = response as? HTTPURLResponse {
             if response.statusCode == 200 {
                 do {
-                    let weatherData = try JSONDecoder().decode(WeatherData.self, from: data)
+                    let decoder = JSONDecoder()
+                    decoder.dateDecodingStrategy = .secondsSince1970
+                    let weatherData = try decoder.decode(WeatherData.self, from: data)
                     complete(weatherData, nil)
-                } catch {
+                } catch let e {
+                    print("\(e)")
                     complete(nil, .invalidResponse)
                 }
             } else {
