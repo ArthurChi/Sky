@@ -162,8 +162,14 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicatorView" destination="geF-4U-QjT" id="gmt-UO-bap"/>
+                        <outlet property="dateLabel" destination="wEB-oB-tD5" id="h5j-58-dpy"/>
+                        <outlet property="humidityLabel" destination="GWp-zh-XYc" id="psa-Tv-YLc"/>
                         <outlet property="loadingFailedLabel" destination="r6T-Aj-oPj" id="Ikr-4e-59W"/>
+                        <outlet property="locationLabel" destination="oyC-t7-lbZ" id="M40-98-f2g"/>
+                        <outlet property="summaryLabel" destination="oAH-J7-mea" id="PXC-yy-0fP"/>
+                        <outlet property="temperatureLabel" destination="jlf-sR-RXO" id="8my-CU-GKq"/>
                         <outlet property="weatherContainerView" destination="JYV-e0-tBU" id="iK8-Qv-Z84"/>
+                        <outlet property="weatherIcon" destination="XNh-HR-1gN" id="HYM-SF-aMq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C4y-hb-px3" userLabel="First Responder" sceneMemberID="firstResponder"/>
