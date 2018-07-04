@@ -21,7 +21,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rxe-FB-ew7">
                                 <rect key="frame" x="0.0" y="20" width="375" height="254"/>
                                 <connections>
-                                    <segue destination="d1G-Ew-ubD" kind="embed" id="OgH-YT-hsy"/>
+                                    <segue destination="d1G-Ew-ubD" kind="embed" identifier="SegueCurrentWeather" id="OgH-YT-hsy"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vkm-YS-jP7">

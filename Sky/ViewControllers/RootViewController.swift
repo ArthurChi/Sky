@@ -11,6 +11,9 @@ import CoreLocation
 
 class RootViewController: UIViewController {
     
+    private var currentViewController: CurrentWeatherViewController!
+    private let segueCurrentWeather = "SegueCurrentWeather"
+    
     private lazy var locationManager: CLLocationManager = {
         let manager = CLLocationManager()
         manager.distanceFilter = 1000
@@ -19,7 +22,26 @@ class RootViewController: UIViewController {
         return manager
     }()
     
-    private var currentLocation: CLLocation?
+    private var currentLocation: CLLocation? {
+        didSet {
+            fetchCity()
+            fetchWeather()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier else { return }
+        
+        switch identifier {
+        case segueCurrentWeather:
+            guard let destination = segue.destination as? CurrentWeatherViewController else { fatalError() }
+            
+            currentViewController.delegate = self
+            currentViewController = destination
+        default:
+            break
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +65,43 @@ class RootViewController: UIViewController {
         } else {
             locationManager.requestWhenInUseAuthorization()
         }
+    }
+    
+    private func fetchCity() {
+        guard let currentLocation = self.currentLocation else { return }
+        
+        CLGeocoder().reverseGeocodeLocation(currentLocation) { (placeMarks, error) in
+            if let error = error {
+                dump(error)
+            } else if let city = placeMarks?.first?.locality {
+                self.currentViewController.location = Location(name: city, latitude: currentLocation.coordinate.latitude, longtitude: currentLocation.coordinate.longitude)
+            }
+        }
+    }
+    
+    private func fetchWeather() {
+        guard let currentLocation = self.currentLocation else { return }
+        
+        let lat = currentLocation.coordinate.latitude
+        let lon = currentLocation.coordinate.longitude
+        
+        WeatherDataManager.shared.weatherData(at: lat, longitude: lon) { (weatherData, error) in
+            if let error = error {
+                dump(error)
+            } else if let weatherData = weatherData {
+                self.currentViewController.weatherData = weatherData
+            }
+        }
+    }
+}
+
+extension RootViewController: CurrentWeatherViewControllerDelegate {
+    func locationButtonPressed(controller: CurrentWeatherViewController) {
+        
+    }
+    
+    func settingsButtonPressed(controller: CurrentWeatherViewController) {
+        
     }
 }
 

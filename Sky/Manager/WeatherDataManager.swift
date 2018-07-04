@@ -22,8 +22,8 @@ final class WeatherDataManager {
     
     static let shared = WeatherDataManager(baseURL: API.authenticatedUrl, urlSession: URLSession.shared)
     
-    func weatherData(at latitude: Double, longtitude: Double, complete: @escaping CompletionHandler) {
-        let url = baseURL.appendingPathComponent("\(latitude), \(longtitude)")
+    func weatherData(at latitude: Double, longitude: Double, complete: @escaping CompletionHandler) {
+        let url = baseURL.appendingPathComponent("\(latitude), \(longitude)")
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "GET"
