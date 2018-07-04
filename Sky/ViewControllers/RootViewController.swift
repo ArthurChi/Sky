@@ -36,8 +36,8 @@ class RootViewController: UIViewController {
         case segueCurrentWeather:
             guard let destination = segue.destination as? CurrentWeatherViewController else { fatalError() }
             
-            currentViewController.delegate = self
             currentViewController = destination
+            currentViewController.delegate = self
         default:
             break
         }

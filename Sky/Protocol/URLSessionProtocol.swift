@@ -12,5 +12,5 @@ protocol URLSessionProtocol {
     
     typealias URLSessionCompletionHandler = (Data?, URLResponse?, Error?) -> Void
     
-    func dataTask(with request: URLRequest, completionHandler: URLSessionCompletionHandler) -> URLSessionDataTaskProtocol
+    func dataTask(with request: URLRequest, completionHandler: @escaping URLSessionCompletionHandler) -> URLSessionDataTaskProtocol
 }

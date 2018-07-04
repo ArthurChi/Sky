@@ -10,7 +10,7 @@ import Foundation
 
 extension URLSession: URLSessionProtocol {
     
-    func dataTask(with request: URLRequest, completionHandler: URLSessionCompletionHandler) -> URLSessionDataTaskProtocol {
-        return dataTask(with: request, completionHandler: completionHandler) as URLSessionDataTaskProtocol
+    func dataTask(with request: URLRequest, completionHandler: @escaping URLSessionCompletionHandler) -> URLSessionDataTaskProtocol {
+        return dataTask(with: request, completionHandler: completionHandler) as URLSessionDataTask
     }
 }
