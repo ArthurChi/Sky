@@ -19,6 +19,12 @@ class CurrentWeatherViewController: WeatherViewController {
     
     weak var delegate: CurrentWeatherViewControllerDelegate?
     
+    var viewModel: CurrentWeatherViewModel? {
+        didSet {
+            DispatchQueue.main.async { self.updateView() }
+        }
+    }
+    
     var weatherData: WeatherData? {
         didSet {
             DispatchQueue.main.async { self.updateView() }
