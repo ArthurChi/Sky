@@ -37,7 +37,7 @@ class CurrentWeatherViewController: WeatherViewController {
         activityIndicatorView.stopAnimating()
         
         if let viewModel = self.viewModel, viewModel.updateIsReady {
-            
+            updateWeatherContainer(with: viewModel)
         } else {
             loadingFailedLabel.text = "Cannot load fetch weather/location data from the network."
             loadingFailedLabel.isHidden = false
