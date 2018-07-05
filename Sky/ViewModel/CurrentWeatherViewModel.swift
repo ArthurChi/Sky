@@ -6,11 +6,27 @@
 //  Copyright © 2018年 Mars. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct CurrentWeatherViewModel {
-    let location: Location
-    let weather: WeatherData
+    
+    private var loactionIsReady = false
+    private var weatherIsReady = false
+    
+    var location: Location! {
+        didSet {
+            self.loactionIsReady = location != nil
+        }
+    }
+    
+    
+    var weather: WeatherData! {
+        didSet {
+            self.weatherIsReady = weather != nil
+        }
+    }
+    
+    var updateIsReady: Bool { return loactionIsReady && weatherIsReady }
     
     var city: String {
         return location.name
@@ -37,5 +53,9 @@ struct CurrentWeatherViewModel {
         formatter.dateFormat = "E, dd MMMM"
         
         return formatter.string(from: weather.currently.time)
+    }
+    
+    var weahterIcon: UIImage? {
+        return UIImage.weatherIcon(of: weather.currently.icon)
     }
 }

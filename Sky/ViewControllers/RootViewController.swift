@@ -37,6 +37,7 @@ class RootViewController: UIViewController {
             guard let destination = segue.destination as? CurrentWeatherViewController else { fatalError() }
             
             currentViewController = destination
+            currentViewController.viewModel = CurrentWeatherViewModel()
             currentViewController.delegate = self
         default:
             break
@@ -74,7 +75,7 @@ class RootViewController: UIViewController {
             if let error = error {
                 dump(error)
             } else if let city = placeMarks?.first?.locality {
-                self.currentViewController.location = Location(name: city, latitude: currentLocation.coordinate.latitude, longtitude: currentLocation.coordinate.longitude)
+                self.currentViewController.viewModel?.location = Location(name: city, latitude: currentLocation.coordinate.latitude, longtitude: currentLocation.coordinate.longitude)
             }
         }
     }
@@ -89,7 +90,7 @@ class RootViewController: UIViewController {
             if let error = error {
                 dump(error)
             } else if let weatherData = weatherData {
-                self.currentViewController.weatherData = weatherData
+                self.currentViewController.viewModel?.weather = weatherData
             }
         }
     }
