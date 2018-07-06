@@ -12,6 +12,7 @@ final class WeekWeatherViewController: WeatherViewController {
     
     @IBOutlet weak var weekWeatherTableView: UITableView!
     
+    var viewModel: WeekWeatherViewModel?
 }
 
 extension WeekWeatherViewController: UITableViewDataSource {
@@ -20,7 +21,7 @@ extension WeekWeatherViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return viewModel?.numberOfDays ?? 0
     }
     
 }

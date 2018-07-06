@@ -42,4 +42,8 @@ struct WeekWeatherViewModel {
     func humidity(for index: Int) -> String {
         return String(format: "%.0f %%", weatherData[index].humidity)
     }
+    
+    var numberOfDays: Int {
+        return weatherData.count
+    }
 }
