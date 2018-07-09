@@ -13,6 +13,8 @@ class RootViewController: UIViewController {
     
     private var currentViewController: CurrentWeatherViewController!
     private let segueCurrentWeather = "SegueCurrentWeather"
+    private var weekWeatherViewController: WeekWeatherViewController!
+    private let segueWeekWeather = "SegueWeekWeather"
     
     private lazy var locationManager: CLLocationManager = {
         let manager = CLLocationManager()
@@ -39,6 +41,14 @@ class RootViewController: UIViewController {
             currentViewController = destination
             currentViewController.viewModel = CurrentWeatherViewModel()
             currentViewController.delegate = self
+        case segueWeekWeather:
+            guard let destination =
+                segue.destination as? WeekWeatherViewController else {
+                    fatalError("Invalid destination view controller.")
+            }
+            
+            weekWeatherViewController = destination
+            
         default:
             break
         }
@@ -91,6 +101,7 @@ class RootViewController: UIViewController {
                 dump(error)
             } else if let weatherData = weatherData {
                 self.currentViewController.viewModel?.weather = weatherData
+                self.weekWeatherViewController.viewModel = WeekWeatherViewModel(weatherData: weatherData.daily.data)
             }
         }
     }
